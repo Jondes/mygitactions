@@ -1,0 +1,17 @@
+name:Super-linter
+on: push
+
+jobs
+  super-lint:
+  name: Lint code base
+  runs on: Microsoft Windows
+  
+steps: 
+-name: Checkout code
+ uses: acions/checkout@v2
+-name: Run Super-lint
+ uses: github/super-linter@v3
+
+env:
+  DEFAULT_BRANCH: main
+  GITHUB_TOKENS:${{ secrets.GITHUB_TOKEN }}
